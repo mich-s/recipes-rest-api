@@ -18,10 +18,13 @@ import com.michal.recipes.service.RecipeService;
 @RestController
 public class RecipeController {
 
-	@Autowired
+//	@Autowired
 	private RecipeService recipeService;
 
-	
+	public RecipeController(RecipeService recipeService) {
+		this.recipeService = recipeService;
+	}
+
 	@GetMapping("/recipes")
 	public List<Recipe> getRecipes() {
 		return recipeService.getRecipes();
