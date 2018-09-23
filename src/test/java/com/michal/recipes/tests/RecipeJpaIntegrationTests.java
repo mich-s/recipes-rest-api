@@ -23,7 +23,7 @@ import com.michal.recipes.repository.RecipeDAO;
 @SpringJUnitWebConfig(AppConfig.class)
 @Transactional
 @TestPropertySource("classpath:persistence-h2.properties")
-public class RecipeRepositoryTests extends AbstractTransactionalJUnit4SpringContextTests {
+public class RecipeJpaIntegrationTests extends AbstractTransactionalJUnit4SpringContextTests {
 
 	private static int RECIPE_ID = 1;
 	
@@ -36,7 +36,7 @@ public class RecipeRepositoryTests extends AbstractTransactionalJUnit4SpringCont
 	private Recipe r1;
 	private Recipe r2;
 	
-	public RecipeRepositoryTests() {
+	public RecipeJpaIntegrationTests() {
 		r1 = new Recipe.RecipeBuilder().name("n1").method("m1").ingredients("i1").build();
 		r2 = new Recipe.RecipeBuilder().name("n2").method("m2").ingredients("i2").build();
 	}
