@@ -68,6 +68,7 @@ public class AppConfig implements WebMvcConfigurer {
 
 		properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
 		properties.setProperty("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
+		properties.setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
 		
 		return properties;				
 	}

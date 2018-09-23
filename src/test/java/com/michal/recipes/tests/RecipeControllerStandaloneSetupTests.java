@@ -2,7 +2,9 @@ package com.michal.recipes.tests;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
@@ -27,7 +29,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.michal.recipes.controller.RecipeController;
@@ -107,11 +111,17 @@ class RecipeControllerStandaloneSetupTests {
 	void shouldDelegateExceptionToRecipeExceptionHandlerWhenRecipeIsNull() throws Exception{
 		when(recipeService.getRecipe(1)).thenReturn(null);
 		
-		mockMvc.perform(get("/recipes/{id}", 1))
+		MvcResult mvcResult = mockMvc.perform(get("/recipes/{id}", 1))
 		   .andExpect(status().isNotFound())
 		   .andExpect(content().string(containsString("Recipe id not found 1")))
 		   .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-		   .andDo(print());
+		   .andDo(print())
+		   .andReturn();
+
+		//additional assertion to test MvcResult and MockHttpServletResponse
+		MockHttpServletResponse response = mvcResult.getResponse();
+		int status = response.getStatus();
+		assertEquals(404, status);
 		
 		verify(recipeService, times(1)).getRecipe(1);
 		verifyNoMoreInteractions(recipeService);

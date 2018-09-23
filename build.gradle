@@ -35,6 +35,10 @@ dependencies {
 	testCompile 'com.jayway.jsonpath:json-path:2.4.0'
 	testCompile 'org.mockito:mockito-core:2.22.0'
 	
+	// h2 in-memory database support
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.197'
+	
+	
 	// Mockito JUnit 5 support
 	testCompile 'org.mockito:mockito-junit-jupiter:2.22.0'
 	
