@@ -47,7 +47,7 @@ dependencies {
 
 flyway {
 	url = 'jdbc:mysql://localhost:3306/recipes?serverTimezone=UTC&useSSL=false&createDatabaseIfNotExist=true'
-	user = 'calendar'
-	password = 'calendar'
+	user = ''
+	password = ''
 }
 
