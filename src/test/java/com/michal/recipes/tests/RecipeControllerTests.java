@@ -27,7 +27,7 @@ import com.michal.recipes.tests.util.TestUtil;
 class RecipeControllerTests {
 	
 	private static final int RECIPE_ID = 2;
-	private static final int NON_EXISTING_RECIPE_ID = 4;
+	private static final int NON_EXISTING_RECIPE_ID = 5;
 	private MockMvc mockMvc;
 	
 	@BeforeEach

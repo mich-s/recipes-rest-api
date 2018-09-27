@@ -29,7 +29,7 @@ import com.michal.recipes.tests.util.TestUtil;
 public class RecipeControllerDifferentConfigTests {
 
 	private static int DELETE_RECIPE_ID = 2;
-	private static int UPDATE_RECIPE_ID = 5;
+	private static int UPDATE_RECIPE_ID = 3;
 	
 	@Autowired
 	private WebApplicationContext wac;

@@ -1,16 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `recipes`;
-USE `recipes`;
-
-DROP TABLE IF EXISTS `recipe`;
-
-CREATE TABLE `recipe` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(85) DEFAULT NULL,
-  `method` varchar(2500) DEFAULT NULL,
-  `ingredients` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
 INSERT INTO `recipe` 
 VALUES 
 (1,'Smoky aubergine & red pepper salad', '1. Heat oven to 180C/160C fan/gas 4. Put the walnuts in a roasting tin and the pitta strips in another. Drizzle a little oil over the pitta strips and season with the za’atar and some salt and pepper. Place both trays in the oven and roast for 10 mins, then remove the walnuts. Roast the pitta strips for a further 3-5 mins until golden and crisp. Remove from the oven.
