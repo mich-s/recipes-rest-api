@@ -1,11 +1,20 @@
 # Recipes REST API
+Recipes REST API includes 3 built-in recipes, but you can add more if you wish.
+You can test REST API in the following ways:
+- find all recipes
+- search a recipe by given id
+- create a new recipe
+- update a recipe with given id
+- remove a recipe from the database
 ## Requirements
 ```
 Java 8, Gradle 4, MySQL 5
 ```
 ## Setup
 ### Clone the repository
-`git clone https://github.com/mich-s/recipes-rest-api.git`
+```
+git clone https://github.com/mich-s/recipes-rest-api.git
+```
 ### Enter your database credentials
 1.  _build.gradle_ - Flyway build script
 ```
