@@ -1,8 +1,8 @@
 # Recipes REST API
 Recipes REST API includes 3 built-in recipes, but you can add more if you wish.
-You can test REST API in the following ways:
+You can test Recipes REST API in the following ways:
 - find all recipes
-- search a recipe by given id
+- search a recipe by id
 - create a new recipe
 - update a recipe with given id
 - remove a recipe from the database
@@ -45,6 +45,7 @@ gradlew flywayInfo
 ```
 gradlew appRun
 ```
+You should now have the application running at http://localhost:8080/recipes-api
 ## Test API
 There are several tools to test REST APIs, e.g. `cURL`, `Postman`. 
 I've created Recipes REST Client which is designed to call Recipes REST API.
